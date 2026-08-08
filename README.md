@@ -1,3 +1,41 @@
+# DevSecOps Learning Project
+
+> ⚠️ This repository is based on OWASP Juice Shop and is used for
+> educational DevSecOps and GitHub Security testing.
+
+## 🔐 My DevSecOps Security Implementation
+
+In this project, I explored and configured GitHub security capabilities,
+including:
+
+- Dependabot
+- CodeQL Code Scanning
+- Secret Scanning
+- Branch Protection Rules
+- Pull Request security checks
+- Security Policy
+- Security Advisories
+
+### Testing
+
+I intentionally retained vulnerable dependencies and vulnerable code
+from the Juice Shop project to observe how GitHub detects and reports
+security issues.
+
+### Key Findings
+
+- Dependabot: dependency vulnerabilities detected
+- CodeQL: source-code vulnerabilities detected
+- Secret Scanning: tested secret detection
+- Branch Protection: configured protection for the main branch
+
+> This repository is for learning and security testing only.
+> Do not deploy it to production.
+
+---
+
+# OWASP Juice Shop
+
 # ![Juice Shop Logo](https://raw.githubusercontent.com/juice-shop/juice-shop/master/frontend/src/assets/public/images/JuiceShop_Logo_100px.png) OWASP Juice Shop
 
 [![OWASP Flagship](https://img.shields.io/badge/owasp-flagship%20project-48A646.svg)](https://owasp.org/projects/#sec-flagships)
