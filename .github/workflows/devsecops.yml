@@ -97,7 +97,7 @@ jobs:
       - name: Generate Trivy HTML report
         uses: aquasecurity/trivy-action@v0.36.0
         with:
-          image-ref: ghcr.io/${{ github.repository_owner }}/devsecops-learning-project:${{ github.sha }}
+          image-ref: ghcr.io/${{ github.repository_owner }}/devsecops-learning-publicrepo:${{ github.sha }}
           format: template
           template: '@html.tpl'
           output: trivy-report.html
