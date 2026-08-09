@@ -36,13 +36,13 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
-            --tag ghcr.io/${{ github.repository_owner }}/devsecops-learning-PublicRepo:${{ github.sha }} \
+            --tag ghcr.io/${{ github.repository_owner }}/devsecops-learning-publicrepo:${{ github.sha }} \
             .
 
       - name: Push Docker image to GHCR
         run: |
           docker push \
-            ghcr.io/${{ github.repository_owner }}/devsecops-learning-PublicRepo:${{ github.sha }}
+            ghcr.io/${{ github.repository_owner }}/devsecops-learning-publicrepo:${{ github.sha }}
 
       - name: Verify Docker image
         run: |
@@ -69,12 +69,12 @@ jobs:
       - name: Pull Docker image from GHCR
         run: |
           docker pull \
-            ghcr.io/${{ github.repository_owner }}/devsecops-learning-PublicRepo:${{ github.sha }}
+            ghcr.io/${{ github.repository_owner }}/devsecops-learning-publicrepo:${{ github.sha }}
 
       - name: Scan image with Trivy
         uses: aquasecurity/trivy-action@v0.36.0
         with:
-          image-ref: ghcr.io/${{ github.repository_owner }}/devsecops-learning-PublicRepo:${{ github.sha }}
+          image-ref: ghcr.io/${{ github.repository_owner }}/devsecops-learning-publicrepo:${{ github.sha }}
           format: table
           severity: CRITICAL,HIGH
           exit-code: '0'
@@ -82,7 +82,7 @@ jobs:
       - name: Generate Trivy JSON report
         uses: aquasecurity/trivy-action@v0.36.0
         with:
-          image-ref: ghcr.io/${{ github.repository_owner }}/devsecops-learning-PublicRepo:${{ github.sha }}
+          image-ref: ghcr.io/${{ github.repository_owner }}/devsecops-learning-publicrepo:${{ github.sha }}
           format: json
           output: trivy-report.json
           severity: CRITICAL,HIGH
@@ -91,7 +91,7 @@ jobs:
       - name: Generate Trivy HTML report
         uses: aquasecurity/trivy-action@v0.36.0
         with:
-          image-ref: ghcr.io/${{ github.repository_owner }}/devsecops-learning-PublicRepo:${{ github.sha }}
+          image-ref: ghcr.io/${{ github.repository_owner }}/devsecops-learning-publicrepo:${{ github.sha }}
           format: template
           template: '@/contrib/html.tpl'
           output: trivy-report.html
@@ -101,7 +101,7 @@ jobs:
       - name: Generate Trivy SARIF report
         uses: aquasecurity/trivy-action@v0.36.0
         with:
-          image-ref: ghcr.io/${{ github.repository_owner }}/devsecops-learning-PublicRepo:${{ github.sha }}
+          image-ref: ghcr.io/${{ github.repository_owner }}/devsecops-learning-publicrepo:${{ github.sha }}
           format: sarif
           output: trivy-report.sarif
           severity: CRITICAL,HIGH
